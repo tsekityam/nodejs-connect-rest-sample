@@ -7,7 +7,7 @@ require('dotenv').config()
 
 module.exports = {
   creds: {
-    redirectUrl: 'http://localhost:3000/token',
+    redirectUrl: process.env.REDIRECT_URL,
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
     identityMetadata: 'https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration',
