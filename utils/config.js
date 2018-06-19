@@ -3,11 +3,13 @@
  * See LICENSE in the project root for license information.
  */
 
+require('dotenv').config()
+
 module.exports = {
   creds: {
     redirectUrl: 'http://localhost:3000/token',
-    clientID: 'ENTER_YOUR_CLIENT_ID',
-    clientSecret: 'ENTER_YOUR_SECRET',
+    clientID: process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
     identityMetadata: 'https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration',
     allowHttpForRedirectUrl: true, // For development only
     responseType: 'code',

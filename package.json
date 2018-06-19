@@ -21,6 +21,7 @@
     "body-parser": "~1.17.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.3",
+    "dotenv": "^6.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-react": "^6.10.3",
     "express": "~4.15.2",
@@ -34,8 +35,8 @@
     "uuid": "^3.0.1"
   },
   "devDependencies": {
-    "@types/node":"^8.0.2",
-    "@types/mocha":"^2.2.41",
+    "@types/node": "^8.0.2",
+    "@types/mocha": "^2.2.41",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
