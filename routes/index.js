@@ -26,7 +26,7 @@ router.get('/', (req, res) => {
   if (!req.isAuthenticated()) {
     res.render('login');
   } else {
-    renderSendMail(req, res);
+    renderSuccess(req, res);
   }
 });
 
@@ -46,7 +46,7 @@ router.get('/token',
         if (!err) {
           req.user.profile.displayName = user.body.displayName;
           req.user.profile.emails = [{ address: user.body.mail || user.body.userPrincipalName }];
-          renderSendMail(req, res);
+          renderSuccess(req, res);
         } else {
           renderError(err, res);
         }
@@ -58,6 +58,14 @@ function renderSendMail(req, res) {
   res.render('sendMail', {
     display_name: req.user.profile.displayName,
     email_address: req.user.profile.emails[0].address
+  });
+}
+
+// Load the success page.
+function renderSuccess(req, res) {
+  res.render('success', {
+    display_name: req.user.profile.displayName,
+    token: req.user.accessToken
   });
 }
 
